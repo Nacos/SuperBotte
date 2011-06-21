@@ -35,21 +35,4 @@ public class Sock
 		this.pred.println(message);
 	}
 
-	public static void main(String[] args)
-		throws Exception
-	{
-		Sock c = new Sock("irc.rezosup.org");
-		c.initConnection("SuperBotte");
-		String mess;
-		while(true)
-		{
-			mess = c.receive();
-			System.out.println(mess);
-			if (mess.contains("PING"))
-			{
-				System.out.println("je vais répondre");
-				c.send("PONG");
-			}
-		}
-	}
 }
